@@ -5,6 +5,8 @@ urlpatterns = [
     # path(route, view, kwargs=None, name=None)
     path("", views.index),
     # re_path(route, view, kwargs=None, name=None)
-    re_path(r'^about/contact/', views.contact),
-    re_path(r'^about/', views.about),
+    path('about/', views.about),
+    re_path(r'^contact/', views.contact),
+    path('details/', views.details),
+    path('user/', views.user),
 ]
