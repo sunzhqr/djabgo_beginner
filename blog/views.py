@@ -11,17 +11,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    header = "User data"
-    langs = ['Python', 'JS', 'Go']
-    user = {
-        'name': 'Sanzhar',
-        'age': 19,
-    }
-    address = ('Astana', 'Dostyk 12', 189)
-
-    data = {'header': header, 'langs': langs, 'user': user, 'address': address}
+    langs = ['Python', 'Java', 'C', 'C++', 'Go', 'Javascript', 'PHP']
     # render(request, template, context)
-    return render(request, 'blog/index.html', context=data)
+    return render(request, 'blog/index.html', context={'langs': langs})
 
 
 def access(request, age):
