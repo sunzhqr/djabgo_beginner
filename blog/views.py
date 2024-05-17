@@ -1,8 +1,29 @@
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.http import (
+    HttpResponse,
+    HttpResponseRedirect,
+    HttpResponsePermanentRedirect,
+    HttpResponseNotFound,
+    HttpResponseBadRequest,
+    HttpResponseForbidden,
+)
 
 
-def index(request):
-    return HttpResponse("<h2>Main page</h2>")
+def index(request, id):
+    people = [None, "Bob", "Sam", "Tom"]
+    if id in range(1, len(people)):
+        return HttpResponse(people[id])
+    return HttpResponseNotFound("Not Found")
+
+
+def access(request, age):
+    # if age beyond range below or not valid value
+    if age not in range(1, 111):
+        return HttpResponseBadRequest("Invalid data")
+    # if age more than 17
+    if age > 17:
+        return HttpResponse("Access allowed")
+    # otherwise, or when age less than or equals 17
+    return HttpResponseForbidden("Access denied: age is not enough!")
 
 
 def about(request):
