@@ -6,12 +6,22 @@ from django.http import (
     HttpResponseBadRequest,
     HttpResponseForbidden,
 )
-
+from django.template.response import TemplateResponse
 from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    header = "User data"
+    langs = ['Python', 'JS', 'Go']
+    user = {
+        'name': 'Sanzhar',
+        'age': 19,
+    }
+    address = ('Astana', 'Dostyk 12', 189)
+
+    data = {'header': header, 'langs': langs, 'user': user, 'address': address}
+    # render(request, template, context)
+    return render(request, 'blog/index.html', context=data)
 
 
 def access(request, age):
