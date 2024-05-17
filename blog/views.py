@@ -7,12 +7,11 @@ from django.http import (
     HttpResponseForbidden,
 )
 
+from django.shortcuts import render
 
-def index(request, id):
-    people = [None, "Bob", "Sam", "Tom"]
-    if id in range(1, len(people)):
-        return HttpResponse(people[id])
-    return HttpResponseNotFound("Not Found")
+
+def index(request):
+    return render(request, 'index.html')
 
 
 def access(request, age):
