@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,7 @@
     <title>Learn Django</title>
 </head>
 <body>
-    {{ body }}
-    {% autoescape off %}
-        {{ body }}
-    {% endautoescape %}
+    <h1>Iguro Obanai</h1>
+    <img src="{% static 'images/obanai.jpg' %}" width="300px">
 </body>
 </html>
