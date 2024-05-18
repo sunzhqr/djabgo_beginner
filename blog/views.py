@@ -11,9 +11,8 @@ from django.shortcuts import render
 
 
 def index(request):
-    langs = ['Python', 'Java', 'C', 'C++', 'Go', 'Javascript', 'PHP']
     # render(request, template, context)
-    return render(request, 'blog/index.html', context={'langs': langs})
+    return render(request, 'blog/index.html', context={'body': "<h1>Hello World!</h1>"})
 
 
 def access(request, age):

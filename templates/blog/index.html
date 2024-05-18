@@ -5,13 +5,9 @@
     <title>Learn Django</title>
 </head>
 <body>
-    <p>Languages</p>
-    <ul>
-        {% for lang in langs %}
-            <li>{{ lang }}</li>
-        {% empty %}
-            <p>Categories are emptyQ</p>
-        {% endfor %}
-    </ul>
+    {{ body }}
+    {% autoescape off %}
+        {{ body }}
+    {% endautoescape %}
 </body>
 </html>
