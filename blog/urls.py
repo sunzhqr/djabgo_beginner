@@ -6,7 +6,7 @@ urlpatterns = [
     # path(route, view, kwargs=None, name=None)
     # re_path(route, view, kwargs=None, name=None)
     path('', views.index),
-    path('about/', TemplateView.as_view(template_name="blog/about.html", extra_context={'header': 'About website'})),
+    path('about/', views.about),
     re_path(r'^contact/', TemplateView.as_view(template_name="blog/contact.html")),
     path('details/', views.details),
     path('user/', views.user),
