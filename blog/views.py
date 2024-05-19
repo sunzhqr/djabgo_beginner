@@ -12,7 +12,7 @@ from django.shortcuts import render
 
 def index(request):
     # render(request, template, context)
-    return render(request, 'blog/index.html')
+    return render(request, 'blog/index.html', context={"site": "Alem"})
 
 
 def access(request, age):
@@ -27,7 +27,7 @@ def access(request, age):
 
 
 def about(request):
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', context={"site": "Youtube"})
 
 
 def contact(request):
